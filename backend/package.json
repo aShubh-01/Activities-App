@@ -1,10 +1,10 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "build": "npm install && tsc -b && cd src/database && npx prisma migrate dev --name Initiate_Schema",
-    "dev": "tsc -b && cd src/database && npx prisma generate && cd ../dist && nodemon index.js ",
+    "build": "npm install && tsc -b && cd database && npx prisma migrate dev --name Initiate_Schema && cd ../dist && node seed.js",
+    "dev": "tsc -b && cd database && npx prisma generate && cd ../dist && nodemon index.js ",
     "start": "tsc -b && cd dist && node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -13,13 +13,17 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@prisma/client": "^5.21.1",
     "@types/cors": "^2.8.17",
+    "@types/dotenv": "^8.2.0",
     "@types/express": "^5.0.0",
+    "@types/nodemon": "^1.19.6",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.21.1",
     "nodemon": "^3.1.7",
     "prisma": "^5.21.1",
     "zod": "^3.23.8"
-  }
+  },
+  "type": "module"
 }

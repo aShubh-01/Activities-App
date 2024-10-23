@@ -62,13 +62,23 @@ Before you begin, ensure you have the following installed on your machine:
      1. VITE_BACKEND_URL = http://localhost:3000 (If you want a differenet port, you can specify it in env var or in config.js in /backend directory)
    
    Environment variables in backend dir :-
-     1. DATABASE_URL = "your_postgreSQL_datbase_url" (Get your own postgreSQL service on Aiven :- [Aiven](https://aiven.io/postgresql))
+     1. DATABASE_URL = "your_postgreSQL_datbase_url"
      2. PORT = your_port (3000 by default, make sure to specify it in the VITE_BACKEND_URL in the frontend environment variables)
 
 3. **Run the project**
-   1. /frontend
-      - npm run build
-      - npm run dev
-   2. /backend
-      - npm run build
-      - npm run start OR npm run dev
+
+   To the run project, you can follow two approaches.
+   
+   1. Run locally by running some commands in each directory
+      1. /frontend
+         - npm run build
+         - npm run dev
+      2. /backend
+         - npm run build
+         - npm run start OR npm run dev
+     
+   2. Run in an containerised environment
+      - DATABASE_URL=your_pgsql_db_url docker-compose up --build
+      
+
+

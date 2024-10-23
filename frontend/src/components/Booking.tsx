@@ -79,7 +79,7 @@ const InputField = ({label, placeholder, type, onChangeHandler} : {
     type: string,
     onChangeHandler: (data: string) => void
 }) => {
-    return <div className='m-1 p-[1px] flex justify-between'>
+    return <div className='m-1 p-[1px] flex justify-between gap-2'>
         <span className='md:text-[20px]'>{label}</span>
         <span>
             <input 

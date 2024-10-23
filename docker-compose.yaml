@@ -1,0 +1,35 @@
+services:
+  activities_app_backend:
+    build: 
+      context: ./backend
+      dockerfile: Dockerfile
+      args:
+        DATABASE_URL: ${DATABASE_URL}
+        BACKEND_PORT: ${BACKEND_PORT:-3000}
+    environment:
+      - DATABASE_URL=${DATABASE_URL}
+      - PORT=${BACKEND_PORT:-3000}
+    ports:
+      - "3000:3000"
+    env_file:
+      - ./backend/.env
+    networks:
+      - activities_app_network
+  
+  activities_app_frontend:
+    depends_on:
+      - activities_app_backend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    environment:
+      - VITE_BACKEND_URL=http://activities_app_backend:3000
+    ports:
+      - "80:80"
+    networks:
+      - activities_app_network
+
+networks:
+  activities_app_network:
+    external: false
+  

@@ -5,4 +5,4 @@ dotenv.config({path : '../.env'})
 
 export const prisma = new PrismaClient();
 
-export const port = process.env.PORT || 3001;
+export const port = process.env.PORT || 3000;

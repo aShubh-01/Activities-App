@@ -1,4 +1,4 @@
-import { useCallback, useState, useEffect } from 'react';
+import { useCallback, useState } from 'react';
 import axios from 'axios';
 import { HeadingCard } from './Activities';
 import { backendUrl } from '../config';
@@ -15,12 +15,6 @@ const BookActivityForm = () => {
     const [email, setEmail] = useState<string>('');
     const [date, setDate] = useState<string>('');
     const activity = JSON.parse(localStorage.getItem('activity') ?? "")
-
-    useEffect(() => {
-        console.log('name ', name)
-        console.log('email ', email)
-        console.log('date ', date)
-    }, [name, email, date])
 
     const bookActivity = useCallback(async ({name, email, date} : {
         name: string,

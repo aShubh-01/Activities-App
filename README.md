@@ -66,16 +66,9 @@ Before you begin, ensure you have the following installed on your machine:
      2. PORT = your_port (3000 by default, make sure to specify it in the VITE_BACKEND_URL in the frontend environment variables)
 
 3. **Run the project**
-
-   To the run project, you can follow two approaches.
-   
-   1. Run locally by running some commands in each directory
-      1. /frontend
-         - npm run build
-         - npm run dev
-      2. /backend
-         - npm run build
-         - npm run start OR npm run dev
-     
-   2. Run in an containerised environment
-      - docker-compose up --build
+   1. /frontend
+      - npm run build
+      - npm run dev
+   2. /backend
+      - npm run build
+      - npm run start OR npm run dev

@@ -1,9 +1,16 @@
-import './App.css'
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import Booking from "./components/Booking"
+import Activities from "./components/Activities"
 
 function App() {
 
   return (
-    <div>hi</div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Activities />}/>
+        <Route path='/book' element={<Booking />}/>
+      </Routes>
+    </BrowserRouter>
   )
 }
 

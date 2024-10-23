@@ -1,11 +1,14 @@
 import express from 'express';
 import cors from 'cors';
+import { port } from './config.js';
+import { getActivities, bookActivity } from './controllers.js';
 
-const mainRouter = express();
-const port = process.env.PORT || 3000;
+const app = express();
 
-mainRouter.use(express.json());
-mainRouter.use(cors());
+app.use(express.json());
+app.use(cors());
 
+app.get('/list', getActivities);
+app.post('/book/:id', bookActivity);
 
-mainRouter.listen(port, () => console.log('Backend on port ' + port))
+app.listen(port, () => console.log('Backend running on port ' + port));

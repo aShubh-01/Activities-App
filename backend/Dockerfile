@@ -1,20 +1,24 @@
 FROM node:20-alpine
 
+ARG DATABASE_URL
+ARG BACKEND_PORT
+
+ENV DATABASE_URL=${DATABASE_URL}
+ENV PORT=${BACKEND_PORT:-3000}
+
 WORKDIR /app
 
+COPY package*.json .
 COPY tsconfig.json .
-COPY .gitignore .
-COPY package* .
 
-RUN npm install && tsc -b
+RUN npm install
 
 COPY database ./database
 
-RUN cd ./database && npx prisma migrate dev --name Initiate Schema
-RUN node dist/seed.js
+COPY src ./src
 
-COPY . .
+RUN npm run build
 
-EXPOSE 3000
+EXPOSE ${PORT}
 
-ENTRYPOINT ["node", "./dist/index.js"]
+ENTRYPOINT ["npm", "run", "start"]

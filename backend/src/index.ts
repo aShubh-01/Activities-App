@@ -11,4 +11,4 @@ app.use(cors());
 app.get('/list', getActivities);
 app.post('/book/:id', bookActivity);
 
-app.listen(port, () => console.log('Backend on port ' + port));
+app.listen(port, () => console.log('Backend running on port ' + port));

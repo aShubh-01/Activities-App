@@ -79,10 +79,6 @@ Before you begin, ensure you have the following installed on your machine:
      
    2. Run in an containerised environment
       - docker-compose up --build
-      - docker exec -it backend_container /bin/sh (Run this set of command only once)
-         - cd database
-         - npx prisma migrate dev --name "Bootstrap Schema"
-         - npx prisma generate
       
 
 

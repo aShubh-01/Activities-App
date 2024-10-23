@@ -1,6 +1,6 @@
 # Activities App
 
-The **Activities App** is an internship assignment by -Advenzone, it allows users to view and book various activities. This application features a frontend built in React.js, backend built with Node.js, utilizing Prisma ORM for database management with a PostgreSQL database. The app implements Zod for data validation on both GET and POST routes.
+The **Activities App** is an internship assignment by -Advenzone, it allows users to view and book various activities. This application features a frontend built in React.js, backend built with Node.js, utilizing Prisma ORM for database management with a PostgreSQL database. The app implements Zod for data validation. 
 
 ## Table of Contents
 
@@ -15,7 +15,7 @@ The **Activities App** is an internship assignment by -Advenzone, it allows user
   - [Run the Application](#run-the-application)
 - [API Endpoints](#api-endpoints)
   - [GET /activities](#get-activities)
-  - [POST /activities](#post-activities)
+  - [POST /booking](#post-booking)
 - [Validation](#validation)
 - [License](#license)
 
@@ -25,6 +25,7 @@ The **Activities App** is an internship assignment by -Advenzone, it allows user
 - Book activities through a simple POST request
 - Data validation using Zod to ensure input integrity
 - Efficient database management with Prisma ORM
+- Uses Docker to run the project in an containerized environment
 
 ## Technologies
 

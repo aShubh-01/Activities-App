@@ -8,11 +8,9 @@ services:
         BACKEND_PORT: ${BACKEND_PORT:-3000}
     environment:
       - DATABASE_URL=${DATABASE_URL}
-      - PORT=${BACKEND_PORT:-3000}
+      - PORT=${BACKEND_PORT}
     ports:
       - "3000:3000"
-    env_file:
-      - ./backend/.env
     networks:
       - activities_app_network
   
@@ -23,9 +21,9 @@ services:
       context: ./frontend
       dockerfile: Dockerfile
     environment:
-      - VITE_BACKEND_URL=http://activities_app_backend:3000
+      - VITE_BACKEND_URL=http://localhost:3000
     ports:
-      - "80:80"
+      - "5173:5173"
     networks:
       - activities_app_network
 
